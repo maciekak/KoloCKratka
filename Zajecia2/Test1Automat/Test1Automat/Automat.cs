@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading;
-using System.Xml.Serialization;
 
 namespace Test1Automat
 {
@@ -14,17 +11,17 @@ namespace Test1Automat
         private int currentDebet;
         private int expectedMoney;
         
-        private bool coffeeWithMilk;
-        private int suggarQuantity;
+        private bool isCoffeeWithMilk;
+        private int sugarQuantity;
 
         public void SetCoffeeType(int type)
         {
-            coffeeWithMilk = type == 2;
+            isCoffeeWithMilk = type == 2;
         }
 
-        public void SetSuggarQuantity(int quantity)
+        public void SetSugarQuantity(int quantity)
         {
-            suggarQuantity = quantity;
+            sugarQuantity = quantity;
         }
 
         public void ShowCoffeSize()
@@ -42,7 +39,7 @@ namespace Test1Automat
             Console.WriteLine("2) Biala");
         }
 
-        public void ShowSuggarInfo()
+        public void ShowSugarInfo()
         {
             Console.WriteLine("Wybierz ile chcesz cukru:");
         }
@@ -56,10 +53,10 @@ namespace Test1Automat
         public void ComputeCoffeePrice()
         {
             expectedMoney = 3;
-            if (coffeeWithMilk)
+            if (isCoffeeWithMilk)
                 expectedMoney += 5;
 
-            expectedMoney += suggarQuantity;
+            expectedMoney += sugarQuantity;
         }
 
         public bool ReceiveMoneyAndCheckIfEnough(int money)
@@ -67,7 +64,6 @@ namespace Test1Automat
             currentDebet += money;
             if (currentDebet < expectedMoney)
             {
-                AskForMoney();
                 return false;
             }
 
@@ -81,10 +77,10 @@ namespace Test1Automat
             Console.WriteLine("Przygotowywanie kawy");
 
             coffee = new Coffee();
-            if(coffeeWithMilk)
+            if(isCoffeeWithMilk)
                 coffee.AddMilk();
 
-            coffee.AddSuggar(suggarQuantity);
+            coffee.AddSugar(sugarQuantity);
 
             for (int i = 0; i < 7; i++)
             {

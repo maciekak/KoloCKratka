@@ -12,8 +12,8 @@ namespace Test1Automat
             automat.ShowCoffeType();
             client.DecideCoffeeType();
 
-            automat.ShowSuggarInfo();
-            client.DecideSuggarQuantity();
+            automat.ShowSugarInfo();
+            client.DecideSugarQuantity();
 
             automat.ComputeCoffeePrice();
             int money;

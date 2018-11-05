@@ -1,23 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks.Dataflow;
-
-namespace Test1Automat
+﻿namespace Test1Automat
 {
     class Coffee
     {
         private bool withMilk;
-        private int howManySuggar;
+        private int howManySugar;
 
         public void AddMilk()
         {
             withMilk = true;
         }
 
-        public void AddSuggar(int quantity)
+        public void AddSugar(int quantity)
         {
-            howManySuggar = quantity;
+            howManySugar = quantity;
         }
 
         public bool CheckIfWithMilk()
@@ -25,9 +20,9 @@ namespace Test1Automat
             return withMilk;
         }
 
-        public int GetHowManySuggar()
+        public int GetHowManySugar()
         {
-            return howManySuggar;
+            return howManySugar;
         }
     }
 }

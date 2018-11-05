@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Test1Automat
 {
@@ -20,10 +18,10 @@ namespace Test1Automat
             automat.SetCoffeeType(coffeeType);
         }
         
-        public void DecideSuggarQuantity()
+        public void DecideSugarQuantity()
         {
             var suggarQuantity = int.Parse(Console.ReadLine());
-            automat.SetSuggarQuantity(suggarQuantity);
+            automat.SetSugarQuantity(suggarQuantity);
         }
         
         public int Pay()
