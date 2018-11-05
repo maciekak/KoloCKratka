@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading;
 
-namespace Test1Automat
+namespace Automat
 {
     class Automat
     {

@@ -1,4 +1,4 @@
-﻿namespace Test1Automat
+﻿namespace Automat
 {
     class Coffee
     {
