@@ -10,7 +10,7 @@ namespace Automat
         private int collectedMoney;
         private int currentDebet;
         private int expectedMoney;
-        
+
         private bool isCoffeeWithMilk;
         private int sugarQuantity;
 
@@ -77,7 +77,7 @@ namespace Automat
             Console.WriteLine("Przygotowywanie kawy");
 
             coffee = new Coffee();
-            if(isCoffeeWithMilk)
+            if (isCoffeeWithMilk)
                 coffee.AddMilk();
 
             coffee.AddSugar(sugarQuantity);

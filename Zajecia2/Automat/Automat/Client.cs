@@ -17,13 +17,13 @@ namespace Automat
             var coffeeType = int.Parse(Console.ReadLine());
             automat.SetCoffeeType(coffeeType);
         }
-        
+
         public void DecideSugarQuantity()
         {
             var suggarQuantity = int.Parse(Console.ReadLine());
             automat.SetSugarQuantity(suggarQuantity);
         }
-        
+
         public int Pay()
         {
             return int.Parse(Console.ReadLine());

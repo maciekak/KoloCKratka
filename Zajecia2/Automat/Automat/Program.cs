@@ -8,7 +8,7 @@ namespace Automat
         {
             var automat = new Automat();
             var client = new Client(automat);
-            
+
             automat.ShowCoffeType();
             client.DecideCoffeeType();
 
