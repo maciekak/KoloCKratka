@@ -1,0 +1,117 @@
+﻿<Window x:Class="Test.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Test"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="352.066" Width="414.463">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="0" Grid.Column="0" Grid.ColumnSpan="5"
+               Grid.Row="0" 
+               VerticalAlignment="Stretch"
+               x:Name="Result" FontSize="24" Background="#FFF3F3F3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+
+        <Button Grid.Column="0" 
+                Content="7" 
+                HorizontalAlignment="Stretch" 
+                Grid.Row="1" 
+                VerticalAlignment="Stretch" Click="Button_Click_6"/>
+        <Button Grid.Column="1" 
+                Content="8" 
+                HorizontalAlignment="Stretch" 
+                Grid.Row="1" 
+                VerticalAlignment="Stretch" Click="Button_Click_7"/>
+        <Button Grid.Column="2" 
+                Content="9" 
+                HorizontalAlignment="Stretch" 
+                Grid.Row="1" 
+                VerticalAlignment="Stretch" Click="Button_Click_8"/>
+
+        <Button Grid.Column="0" 
+                Content="4" 
+                HorizontalAlignment="Stretch" 
+                Grid.Row="2" 
+                VerticalAlignment="Stretch" Click="Button_Click_3"/>
+        <Button Grid.Column="1" 
+                Content="5" 
+                HorizontalAlignment="Stretch" 
+                Grid.Row="2" 
+                VerticalAlignment="Stretch" Click="Button_Click_4"/>
+        <Button Grid.Column="2" 
+                Content="6" 
+                HorizontalAlignment="Stretch" 
+                Grid.Row="2" 
+                VerticalAlignment="Stretch" Click="Button_Click_5"/>
+
+        <Button Grid.Column="0" 
+                Content="1" 
+                HorizontalAlignment="Stretch" 
+                Grid.Row="3" 
+                VerticalAlignment="Stretch" Click="Button_Click"/>
+        <Button Grid.Column="1" 
+                Content="2" 
+                HorizontalAlignment="Stretch" 
+                Grid.Row="3" 
+                VerticalAlignment="Stretch" Click="Button_Click_1"/>
+        <Button Grid.Column="2" 
+                Content="3" 
+                HorizontalAlignment="Stretch" 
+                Grid.Row="3" 
+                VerticalAlignment="Stretch" Click="Button_Click_2"/>
+
+        <Button Grid.Column="1" 
+                Content="0" 
+                HorizontalAlignment="Stretch" 
+                Grid.Row="4" 
+                VerticalAlignment="Stretch" Click="Button_Click_9"/>
+
+        <Button Grid.Column="3" 
+                Content="+" 
+                HorizontalAlignment="Stretch" 
+                Grid.Row="1" 
+                VerticalAlignment="Stretch" Click="Button_Click_10"/>
+        <Button Grid.Column="4" 
+                Content="-" 
+                HorizontalAlignment="Stretch" 
+                Grid.Row="1" 
+                VerticalAlignment="Stretch" Click="Button_Click_11"/>
+
+        <Button Grid.Column="3" 
+                Content="*" 
+                HorizontalAlignment="Stretch" 
+                Grid.Row="2" 
+                VerticalAlignment="Stretch" Click="Button_Click_12"/>
+        <Button Grid.Column="4" 
+                Content="/" 
+                HorizontalAlignment="Stretch" 
+                Grid.Row="2" 
+                VerticalAlignment="Stretch" Click="Button_Click_13"/>
+
+        <Button Grid.Column="3" 
+                Content="=" 
+                HorizontalAlignment="Stretch" 
+                Grid.Row="3" 
+                VerticalAlignment="Stretch" Click="Button_Click_14"/>
+        <Button Grid.Column="4" 
+                Content="C" 
+                HorizontalAlignment="Stretch" 
+                Grid.Row="3" 
+                VerticalAlignment="Stretch" Click="Button_Click_15"/>
+
+    </Grid>
+</Window>
