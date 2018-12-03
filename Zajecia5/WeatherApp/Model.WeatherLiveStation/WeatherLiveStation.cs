@@ -9,12 +9,10 @@ namespace Model.WheatherLiveStation
     public class WeatherLiveStation : IWeatherStation
     {
         private readonly Timer _timer;
-        private readonly Random _random;
         private const string CurrentUrl = "http://api.openweathermap.org/data/2.5/weather?q=London&mode=xml&units=metric&APPID=83b9608e79d65bd5c19678b03317bd45";
 
         public WeatherLiveStation()
         {
-            _random = new Random();
             _timer = new Timer(1000*60*10);
             _timer.Elapsed += TimerOnElapsed;
             _timer.Enabled = true;
