@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Net;
 using System.Timers;
+using System.Xml;
 using Model.Common;
 
 namespace Model.WheatherLiveStation
@@ -8,7 +10,7 @@ namespace Model.WheatherLiveStation
     {
         private readonly Timer _timer;
         private readonly Random _random;
-        private const string CurrentUrl = "http://api.openweathermap.org/data/2.5/weather?q=London&mode=xml&units=metric&APPID=API_KEY";
+        private const string CurrentUrl = "http://api.openweathermap.org/data/2.5/weather?q=London&mode=xml&units=metric&APPID=83b9608e79d65bd5c19678b03317bd45";
 
         public WeatherLiveStation()
         {
@@ -31,32 +33,27 @@ namespace Model.WheatherLiveStation
 
         private WeatherChangedArgs GetWeather()
         {
-//            using (var webClient = new WebClient())
-//            {
-//                var xmlContent = webClient.DownloadString(CurrentUrl);
-//                var xmlDocument = new XmlDocument();
-//                xmlDocument.LoadXml(xmlContent);
-//
-//                if (xmlDocument.DocumentElement == null)
-//                {
-//                    return new WeatherChangedArgs(0, 0, 0);
-//                }
-//
-//                var temperature =
-//                    (int) double.Parse(xmlDocument.DocumentElement.Attributes.GetNamedItem("temperature").Value);
-//                var pressure = 
-//                    (int) double.Parse(xmlDocument.DocumentElement.Attributes.GetNamedItem("pressure").Value);
-//                var wind =
-//                    (int)double.Parse(xmlDocument.DocumentElement.Attributes.GetNamedItem("speed").Value);
-//
-//                return new WeatherChangedArgs(temperature, pressure, wind);
-//            }
+            using (var webClient = new WebClient())
+            {
+                var xmlContent = webClient.DownloadString(CurrentUrl);
+                var xmlDocument = new XmlDocument();
+                xmlDocument.LoadXml(xmlContent);
 
-            var temperature = _random.Next(-20, 40);
-            var pressure = _random.Next(900, 1100);
-            var wind = _random.Next(0, 100);
-            return new WeatherChangedArgs(temperature, pressure, wind);
+                if (xmlDocument.DocumentElement == null)
+                {
+                    return new WeatherChangedArgs(0, 0, 0);
+                }
 
+                var nodes = xmlDocument.ChildNodes[1].ChildNodes;
+                var temperature =
+                    (int) double.Parse(nodes[1].Attributes.GetNamedItem("value").Value);
+                var pressure = 
+                    (int) double.Parse(nodes[3].Attributes.GetNamedItem("value").Value);
+                var wind =
+                    (int)double.Parse(nodes[4].FirstChild.Attributes.GetNamedItem("value").Value);
+
+                return new WeatherChangedArgs(temperature, pressure, wind);
+            }
         }
 
         public event EventHandler<WeatherChangedArgs> WeatherChanged;

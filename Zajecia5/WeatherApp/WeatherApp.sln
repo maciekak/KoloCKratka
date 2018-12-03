@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherApp", "View\WeatherApp\WeatherApp.csproj", "{DABC6267-F36E-4A1A-B060-A0EDE77CBEE5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherApp", "View\WeatherApp.csproj", "{DABC6267-F36E-4A1A-B060-A0EDE77CBEE5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewModel.WeatherApp", "ViewModel.WeatherApp\ViewModel.WeatherApp.csproj", "{A6A9671D-2F0D-4038-A492-137B04DB367A}"
 EndProject
