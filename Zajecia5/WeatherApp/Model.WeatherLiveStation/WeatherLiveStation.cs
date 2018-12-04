@@ -3,6 +3,7 @@ using System.Net;
 using System.Timers;
 using System.Xml;
 using Model.Common;
+using System.Globalization;
 
 namespace Model.WheatherLiveStation
 {
@@ -44,11 +45,11 @@ namespace Model.WheatherLiveStation
 
                 var nodes = xmlDocument.ChildNodes[1].ChildNodes;
                 var temperature =
-                    (int) double.Parse(nodes[1].Attributes.GetNamedItem("value").Value);
+                    (int) double.Parse(nodes[1].Attributes.GetNamedItem("value").Value, CultureInfo.InvariantCulture);
                 var pressure = 
-                    (int) double.Parse(nodes[3].Attributes.GetNamedItem("value").Value);
+                    (int) double.Parse(nodes[3].Attributes.GetNamedItem("value").Value, CultureInfo.InvariantCulture);
                 var wind =
-                    (int)double.Parse(nodes[4].FirstChild.Attributes.GetNamedItem("value").Value);
+                    (int)double.Parse(nodes[4].FirstChild.Attributes.GetNamedItem("value").Value, CultureInfo.InvariantCulture);
 
                 return new WeatherChangedArgs(temperature, pressure, wind);
             }
