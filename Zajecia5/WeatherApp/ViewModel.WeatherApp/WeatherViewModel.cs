@@ -15,6 +15,7 @@ namespace ViewModel.WeatherApp
         private int _wind;
 
         #region Properties
+        
         public int Temperature
         {
             get => _temperature;
@@ -55,8 +56,7 @@ namespace ViewModel.WeatherApp
         }
 
         #endregion
-
-        public event EventHandler<EventArgs> WeatherChanged;
+        
         public WeatherViewModel()
         {
             _weatherStation = new WeatherLiveStation();
@@ -69,11 +69,6 @@ namespace ViewModel.WeatherApp
             Temperature = weatherChangedArgs.Temperature;
             Pressure = weatherChangedArgs.Pressure;
             Wind = weatherChangedArgs.Wind;
-        }
-
-        protected virtual void OnWeatherChanged()
-        {
-            WeatherChanged?.Invoke(this, EventArgs.Empty);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
