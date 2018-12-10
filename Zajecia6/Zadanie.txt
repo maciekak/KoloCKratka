@@ -1,0 +1,3 @@
+-Warcaby
+-Gra w statki
+-Kamien, papier, nozyce po TCP
